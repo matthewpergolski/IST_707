@@ -1,0 +1,8 @@
+"0","    # Dissimilarity matrix"
+"0","    d <- dist(num.data.cluster, method = ""euclidean"")"
+"0","    #d"
+"0","    # Hierarchical clustering using Complete Linkage"
+"0","    hc1 <- hclust(d, method = ""ward.D"" )"
+"0","    "
+"0","    # Plot the obtained dendrogram"
+"0","    plot(hc1, cex = 0.6, hang = -1)"

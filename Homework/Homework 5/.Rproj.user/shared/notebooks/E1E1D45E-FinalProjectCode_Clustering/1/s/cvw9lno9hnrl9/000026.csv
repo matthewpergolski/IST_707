@@ -1,0 +1,557 @@
+"0","    "
+"0","    clusplot(num.data.cluster, k.means$cluster, color=T, shade=T,"
+"0","             Labels=2, lines=0) # plot clusters"
+"2","Warning in plot.window(...) :"
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in plot.xy(xy, type, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in axis(side = side, at = at, labels = labels, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in axis(side = side, at = at, labels = labels, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in box(...) :"
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in title(...) :"
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in polygon(z[[k]], density = if (shade) density[k] else 0, col = col.clus[jInd[i]],  :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in polygon(z[[k]], density = if (shade) density[k] else 0, col = col.clus[jInd[i]],  :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in segments(lx1, ly1, lx2, ly2, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in polygon(z[[k]], density = if (shade) density[k] else 0, col = col.clus[jInd[i]],  :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in plot.xy(xy.coords(x, y), type = type, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in plot.xy(xy.coords(x, y), type = type, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"
+"2","Warning in plot.xy(xy.coords(x, y), type = type, ...) :"
+"2","
+ "
+"2"," ""Labels"" is not a graphical parameter
+"

@@ -1,0 +1,386 @@
+---
+IST707 Food Desert Project
+Kaitlyn Keebaugh, Miranda Braman, Matthew Pergolski, Victor Yamaykin
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE # Show output only, no warnings or messages 
+  , tidy=FALSE, tidy.opts=list(width.cutoff=80)  # Line wrapping
+  , out.width="75%", fig.align='center'  # For inserting images inline, to be used with the below chunk.
+  )
+```
+
+```{r load_packages, include=FALSE}
+library(knitr)     
+library(magrittr)  
+library(tidyverse)
+library(DataExplorer)
+library(ggplot2)
+library(arules)
+library(arulesViz)
+library(ROSE)
+library(randomForest)
+library(caret)
+library(e1071)
+library(tidyverse)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(arules)
+library(RColorBrewer)
+library(arulesViz)
+library(neuralnet)
+library(caret)
+library(arm)
+library(rpart.plot)
+library(rpart)
+library(rattle)
+library(plotly)
+library(tidyverse)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(DescTools)
+```
+
+
+```{r}
+fname<- "/Users/pergolicious/Library/CloudStorage/OneDrive-SyracuseUniversity/Syracuse University/Courses/IST 707/Final Project/Submission/IST-707_Final_Project_Data-Set.csv"
+read.csv(fname, header=T, stringsAsFactors = F)-> project_data
+str(project_data)
+
+introduce(project_data)
+
+table(project_data$foodDesert)
+
+# Oversampling test
+set.seed(42)
+barplot(prop.table(table(project_data$foodDesert)),
+        col = rainbow(2),
+        ylim = c(0,0.7),
+        main = "Class Distribution")
+
+under_sampled <-ovun.sample(foodDesert~., data=project_data,seed=1, method="under")$data
+
+table(under_sampled$foodDesert)
+
+plot_correlation(project_data, maxcat=5L)
+
+
+table(discretize(project_data$Pop2010, breaks=3))
+hist(project_data$Pop2010, breaks = 12, main = "Equal Frequency Discretization")
+
+
+ARM_ready_data <- discretizeDF(project_data, methods = list(
+  Pop2010 = list(method = "frequency", breaks = 5, 
+                 labels = c("very low", "low", "medium", "high", "very high")),
+  OHU2010 = list(method = "frequency", breaks = 3,
+                 labels = c("low", "medium", "high")),
+  PovertyRate = list(method = "frequency", breaks = 3,
+                     labels = c("low", "medium", "high")),
+  MedianFamilyIncome = list(method = "frequency", breaks = 3,
+                            labels = c("low", "medium", "high"))),default = list(method = "none"))
+
+head(ARM_ready_data)
+
+# Turn the data set to transactions
+tid <- as.character(ARM_ready_data$CensusTract)
+ARM_ready_data$id <- NULL
+transactions <- as(ARM_ready_data, "transactions")
+transactionInfo(transactions)[["transactionID"]] <- tid
+
+str(project_data)
+plot_str(project_data)
+introduce(project_data)
+
+plot_correlation(project_data, maxcat=5L)
+
+plot_prcomp(na.omit(project_data), variance_cap = 0.8, nrow = 2L, ncol = 2L)
+
+plot(project_data$PovertyRate, project_data$MedianFamilyIncome)
+
+plot_scatterplot(project_data[, c("PovertyRate", "MedianFamilyIncome")], by="PovertyRate", sampled_rows = 1000L)
+
+p <- ggplot(project_data[sample(nrow(project_data), 250), ], aes(MedianFamilyIncome, PovertyRate, color=foodDesert, size = Pop2010*10,
+                                                                 main="Food")) + geom_point(na.rm = T)
+p
+```
+
+```{r}
+# Create an item frequency plot for the top 20 items
+if (!require("RColorBrewer")) {
+  # install color package of R
+install.packages("RColorBrewer")
+#include library RColorBrewer
+library(RColorBrewer)
+}
+
+# First 
+
+# Look at relative frequency plot to see how many times these items have appeared as compared to others
+itemFrequencyPlot(transactions, topN=20, type="relative", col=brewer.pal(8, 'Pastel2'),main="Relative Item Frequency Plot for Food Access Research Atlas (FARA)")
+
+
+# Set limit to two digit places
+options(digits=2)
+
+
+ARM_data <- ARM_ready_data[,-c(3)]
+
+# Turn the data set to transactions
+tid <- as.character(ARM_ready_data$CensusTract)
+ARM_data$id <- NULL
+transactions <- as(ARM_data, "transactions")
+transactionInfo(transactions)[["transactionID"]] <- tid
+
+
+
+# Get the rules with low support and low confidence
+rules <- apriori(transactions, parameter = list(supp = 0.02, conf = 0.7, minlen=4))
+
+# Show rules 
+inspect(rules[1:20])
+
+## Sort by lift
+SortedRules_conf <- sort(rules, by="confidence", decreasing=F)
+inspect(SortedRules_conf[1:50])
+
+## Take the top 10 rules sorted by lift
+top10rules_conf <- head(SortedRules_conf, n = 10, by = "confidence")
+inspect(top10rules_conf)
+
+library(arulesViz)
+## Visualize the rules with a parallel coordinate plot
+plot(top10rules_conf, method = "paracoord")
+#plot(top10rules_conf, method = "graph", interactive = T)
+plot(top10rules_conf, method = "graph")
+
+```
+
+
+```{r include = FALSE}
+    str(raw.data.cluster)
+    summary(raw.data.cluster)
+    head(raw.data.cluster)
+```
+    
+
+###############################################################################################
+
+Section 2: Clustering
+# PRE-PROCESSING / DATA MUNGING
+    
+```{r include = FALSE}
+project_data->raw.data.cluster
+    # Aggregate Data by State
+    data.cluster <- aggregate(raw.data.cluster, by = list(raw.data.cluster$State), FUN = mean, na.rm = T)
+    rownames(data.cluster) <- data.cluster$Group.1
+```
+
+    
+```{r}
+    # Convert Data to Numeric-Only For Clustering
+    colnames(data.cluster[,c(1,2,3,4)])
+    str(data.cluster[,c(-1,-2,-3,-4)])
+    num.data.cluster <- data.cluster[,c(-1,-2,-3,-4)]
+    num.data.cluster <- as.data.frame(scale(num.data.cluster))
+    str(num.data.cluster)
+
+```
+
+####################################################################################
+
+# MODELS
+
+```{r echo=FALSE}
+    # Optimal Amount of Clusters | Average Silhouette Method
+    fviz_nbclust(num.data.cluster, FUN = hcut, method = "silhouette")
+      # plot shows 3 optimal clusters
+
+```
+    
+# Agnes Function | Dendrogram
+    
+```{r}
+    # Determine Optimal Agnes Method
+    m.assess <- c("average", "single", "complete", "ward")
+    names(m.assess) <- c( "average", "single", "complete", "ward")
+    
+    compute.coeff <- function(x) 
+      {
+      agnes(num.data.cluster, method = x)$ac
+      }
+      
+    hc.coeff.df <- as.data.frame(map_dbl(m.assess, compute.coeff))
+    hc.coeff.df
+      # Method 'ward' conveys highest quality with 0.8895291
+    
+    H.C <- agnes(num.data.cluster, method = "ward")
+    
+    # Agglomerative coefficient (which measures the amount of clustering structure found)
+    # (values closer to 1 suggest strong clustering structure)
+    H.C$ac
+    ## [1] 0.8895291
+    
+    pltree(H.C, cex = 0.6, hang = -1, main = "Dendrogram of AGNES") 
+    rect.hclust(H.C, k = 3, border = 2:5)
+
+```
+
+# hclust Function / Dendrogram
+    
+```{r}
+    # Dissimilarity matrix
+    d <- dist(num.data.cluster, method = "euclidean")
+    #d
+    # Hierarchical clustering using Complete Linkage
+    hc1 <- hclust(d, method = "ward.D" )
+    
+    # Plot the obtained dendrogram
+    plot(hc1, cex = 0.6, hang = -1)
+    rect.hclust(hc1, k = 3, border = 2:5)
+    
+        #fviz_nbclust(num.data.cluster, kmeans, method = "wss")
+
+```
+    
+# K MEANS ###########
+    
+    
+```{r}
+    k.means <- kmeans(num.data.cluster, 3)
+    k.means
+    k.means$centers
+    
+    assignment_clusters <- data.frame(num.data.cluster, k.means$cluster)
+    assignment_clusters
+    head(assignment_clusters)
+    
+    clusplot(num.data.cluster, k.means$cluster, color=T, shade=T,
+             Labels=2, lines=0) # plot clusters
+    
+    
+    fviz_cluster(k.means, data = num.data.cluster, 
+                 main = 'Cluster Plot',
+                 xlab = '',
+                 ylab = '', pointsize = num.data.cluster$PovertyRate)
+
+```
+    
+    
+    
+```{r}
+    # Helpful Data Tables
+    # Create Separate DF
+    main.cluster.df <- data.frame(raw.data.cluster, k.means$cluster)
+    main.cluster.df <- main.cluster.df[,c(-1,-3,-4)]
+    head(main.cluster.df)
+    
+    # Discretize Poverty Rate
+    pv.bins <- 3
+    
+    min.pv <- min(main.cluster.df$PovertyRate)
+    min.pv
+    
+    max.pv <- max(main.cluster.df$PovertyRate)
+    max.pv
+    
+    mid.pv <- (max.pv - min.pv) / pv.bins
+    mid.pv
+    
+    mid.pv * 3
+    
+    main.cluster.df$DiscPovertyRate <- cut(main.cluster.df$PovertyRate,
+                                           breaks = c(min.pv, mid.pv, max.pv, Inf),
+                                           labels = c('Min', 'Mid', 'Max'))
+    
+    str(main.cluster.df)   
+    head(main.cluster.df)            
+
+```
+    
+
+```{r}
+    cluster.1.df <- main.cluster.df[main.cluster.df$k.means.cluster == 1,]
+    Mode(cluster.1.df$DiscPovertyRate)
+    cluster.1.df
+
+    cluster.2.df <- main.cluster.df[main.cluster.df$k.means.cluster == 2,]
+    Mode(cluster.2.df$DiscPovertyRate)
+    mean(cluster.2.df$PovertyRate)
+    cluster.2.df
+
+    cluster.3.df <- main.cluster.df[main.cluster.df$k.means.cluster == 3,]
+    cluster.3.df <- na.omit(cluster.3.df)
+    Mode(cluster.3.df$DiscPovertyRate)
+    cluster.3.df
+    
+    main.cluster.df <- aggregate(main.cluster.df, by = list(main.cluster.df$State), FUN = mean)
+    main.cluster.df
+
+```
+
+
+Section 3: Classification Models 
+must normalize some columns and make their numbers between 0 and 1 for Classification Models
+``` {r}
+project_data-> fooddesert
+fooddesert$MedianFamilyIncome <-(fooddesert$MedianFamilyIncome-min(fooddesert$MedianFamilyIncome)) /
+  (max(fooddesert$MedianFamilyIncome)-min(fooddesert$MedianFamilyIncome))
+fooddesert$OHU2010 <-(fooddesert$OHU2010-min(fooddesert$OHU2010)) /
+  (max(fooddesert$OHU2010)-min(fooddesert$OHU2010))
+fooddesert$PovertyRate <-(fooddesert$PovertyRate-min(fooddesert$PovertyRate)) /
+  (max(fooddesert$PovertyRate)-min(fooddesert$PovertyRate))
+```
+
+Decision Trees
+``` {r}
+is.na(fooddesert)
+set.seed(341)
+
+#randomize the dataset
+fooddesert[sample(nrow(fooddesert)),]-> fooddesert
+#make train 80% of data and test 20%
+nrow(fooddesert)*.8-> index
+fooddesert[1:index,]->train
+fooddesert[(index+1): nrow(fooddesert),]->test
+
+# check percentages 
+prop.table(table(train$foodDesert))
+prop.table(table(test$foodDesert))
+```
+
+```{r, include=FALSE}
+
+## Decision tree #2
+train_tree1 <- rpart(foodDesert ~ Urban+OHU2010+LowIncomeTracts+PovertyRate+MedianFamilyIncome, 
+                     data = train, method="class", 
+                     control=rpart.control(cp=0.013, maxdepth=4))
+#verify CP and size of tree
+rsq.rpart(train_tree1)
+plotcp(train_tree1)
+printcp(train_tree1)
+
+predicted1= predict(train_tree1, test, type="class")
+fancyRpartPlot(train_tree1)
+confusionMatrix(predicted1, as.factor(test$foodDesert))
+
+
+## Decision Tree #3
+train_tree1 <- rpart(foodDesert ~ LowIncomeTracts+MedianFamilyIncome, 
+                     data = train, method="class", 
+                     control=rpart.control(cp=0.005, maxdepth=3))
+rsq.rpart(train_tree1)
+plotcp(train_tree1)
+printcp(train_tree1)
+
+predicted1= predict(train_tree1, test, type="class")
+fancyRpartPlot(train_tree1)
+confusionMatrix(predicted1, as.factor(test$foodDesert))
+printcp(train_tree1)
+```

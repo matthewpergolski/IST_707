@@ -1,0 +1,5 @@
+"0","testset <- read.csv(""/Users/pergolicious/Downloads/Kaggle-digit-test-sample1000.csv"")"
+"0","testset$Survived=factor(testset$Survived)"
+"2","Error in `$<-.data.frame`(`*tmp*`, Survived, value = integer(0)) : 
+  replacement has 0 rows, data has 1000
+"

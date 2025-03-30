@@ -1,0 +1,2 @@
+"0","    # Optimal Amount of Clusters | Average Silhouette Method"
+"0","    fviz_nbclust(num.data.cluster, FUN = hcut, method = ""silhouette"")"

@@ -1,0 +1,7 @@
+"0","    "
+"0","    "
+"0","    fviz_cluster(k.means, data = num.data.cluster, "
+"0","                 main = 'Cluster Plot',"
+"0","                 xlab = '',"
+"0","                 ylab = '', pointsize = num.data.cluster$PovertyRate)"
+"0",""

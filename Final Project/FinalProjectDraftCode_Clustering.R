@@ -1,0 +1,154 @@
+# Clustering | Matthew L. Pergolski | Food Desert | IST 707
+
+###############################################################################################
+
+# LOAD PACKAGES & DATA SET
+    
+    # Load Additional Packages
+    library(tidyverse)
+    library(cluster)
+    library(factoextra)
+    library(dendextend)
+    library(DescTools)
+    
+    # Load Data Set
+    raw.data.cluster <- read.csv('/Users/pergolicious/Downloads/Balanced_FoodDesertComparisonData_2006_2019.csv',
+                                  stringsAsFactors = TRUE)
+    
+    #/Users/pergolicious/Downloads/FoodAccessResearchAtlasData2019.csv
+    #/Users/pergolicious/OneDrive - Syracuse University/Syracuse University/Courses/IST 707/Final Project/Balanced_FoodDesertComparisonData_2006_2019.csv
+    #/Users/pergolicious/Downloads/Balanced_FoodDesertComparisonData_2006_2019.csv
+    
+    str(raw.data.cluster)
+    summary(raw.data.cluster)
+    head(raw.data.cluster)
+
+###############################################################################################
+
+
+# PRE-PROCESSING / DATA MUNGING
+    
+    # Aggregate Data by State
+    data.cluster <- aggregate(raw.data.cluster, by = list(raw.data.cluster$State), FUN = mean, na.rm = T)
+    rownames(data.cluster) <- data.cluster$Group.1
+
+    # Convert Data to Numeric-Only For Clustering
+    colnames(data.cluster[,c(1,2,3,4)])
+    str(data.cluster[,c(-1,-2,-3,-4)])
+    num.data.cluster <- data.cluster[,c(-1,-2,-3,-4)]
+    num.data.cluster <- as.data.frame(scale(num.data.cluster))
+    str(num.data.cluster)
+    
+
+####################################################################################
+
+# MODELS
+
+    # Optimal Amount of Clusters | Average Silhouette Method
+    fviz_nbclust(num.data.cluster, FUN = hcut, method = "silhouette")
+      # plot shows 3 optimal clusters
+    
+# Agnes Function | Dendrogram
+    
+    # Determine Optimal Agnes Method
+    m.assess <- c("average", "single", "complete", "ward")
+    names(m.assess) <- c( "average", "single", "complete", "ward")
+    
+    compute.coeff <- function(x) 
+      {
+      agnes(num.data.cluster, method = x)$ac
+      }
+      
+    hc.coeff.df <- as.data.frame(map_dbl(m.assess, compute.coeff))
+    hc.coeff.df
+      # Method 'ward' conveys highest quality with 0.8895291
+    
+    H.C <- agnes(num.data.cluster, method = "ward")
+    
+    # Agglomerative coefficient (which measures the amount of clustering structure found)
+    # (values closer to 1 suggest strong clustering structure)
+    H.C$ac
+    ## [1] 0.8895291
+    
+    pltree(H.C, cex = 0.6, hang = -1, main = "Dendrogram of AGNES") 
+    rect.hclust(H.C, k = 3, border = 2:5)
+
+# hclust Function / Dendrogram
+    
+    # Dissimilarity matrix
+    d <- dist(num.data.cluster, method = "euclidean")
+    #d
+    # Hierarchical clustering using Complete Linkage
+    hc1 <- hclust(d, method = "ward.D" )
+    
+    # Plot the obtained dendrogram
+    plot(hc1, cex = 0.6, hang = -1)
+    rect.hclust(hc1, k = 3, border = 2:5)
+    
+        #fviz_nbclust(num.data.cluster, kmeans, method = "wss")
+    
+# K MEANS ###########
+    
+    k.means <- kmeans(num.data.cluster, 3)
+    k.means
+    k.means$centers
+    
+    assignment_clusters <- data.frame(num.data.cluster, k.means$cluster)
+    assignment_clusters
+    head(assignment_clusters)
+    
+    clusplot(num.data.cluster, k.means$cluster, color=T, shade=T,
+             Labels=2, lines=0) # plot clusters
+    
+    
+    fviz_cluster(k.means, data = num.data.cluster, 
+                 main = 'Cluster Plot',
+                 xlab = '',
+                 ylab = '', pointsize = num.data.cluster$PovertyRate)
+    
+    
+    
+    # Helpful Data Tables
+    # Create Separate DF
+    main.cluster.df <- data.frame(raw.data.cluster, k.means$cluster)
+    main.cluster.df <- main.cluster.df[,c(-1,-3,-4)]
+    head(main.cluster.df)
+    
+    # Discretize Poverty Rate
+    pv.bins <- 3
+    
+    min.pv <- min(main.cluster.df$PovertyRate)
+    min.pv
+    
+    max.pv <- max(main.cluster.df$PovertyRate)
+    max.pv
+    
+    mid.pv <- (max.pv - min.pv) / pv.bins
+    mid.pv
+    
+    mid.pv * 3
+    
+    main.cluster.df$DiscPovertyRate <- cut(main.cluster.df$PovertyRate,
+                                           breaks = c(min.pv, mid.pv, max.pv, Inf),
+                                           labels = c('Min', 'Mid', 'Max'))
+    
+    str(main.cluster.df)   
+    head(main.cluster.df)            
+    
+    
+    cluster.1.df <- main.cluster.df[main.cluster.df$k.means.cluster == 1,]
+    Mode(cluster.1.df$DiscPovertyRate)
+    View(cluster.1.df)
+
+    cluster.2.df <- main.cluster.df[main.cluster.df$k.means.cluster == 2,]
+    Mode(cluster.2.df$DiscPovertyRate)
+    mean(cluster.2.df$PovertyRate)
+    View(cluster.2.df)
+
+    cluster.3.df <- main.cluster.df[main.cluster.df$k.means.cluster == 3,]
+    cluster.3.df <- na.omit(cluster.3.df)
+    Mode(cluster.3.df$DiscPovertyRate)
+    View(cluster.3.df)
+    
+    main.cluster.df <- aggregate(main.cluster.df, by = list(main.cluster.df$State), FUN = mean)
+    main.cluster.df

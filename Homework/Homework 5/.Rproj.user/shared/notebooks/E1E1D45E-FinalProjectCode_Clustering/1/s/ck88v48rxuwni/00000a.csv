@@ -1,0 +1,10 @@
+"0","    # Helpful Data Tables"
+"0","    # Create Separate DF"
+"0","    main.cluster.df <- data.frame(raw.data.cluster, k.means$cluster)"
+"2","Warning in data.frame(raw.data.cluster, k.means$cluster) :"
+"2","
+ "
+"2"," row names were found from a short variable and have been discarded
+"
+"0","    main.cluster.df <- main.cluster.df[,c(-1,-3,-4)]"
+"0","    head(main.cluster.df)"

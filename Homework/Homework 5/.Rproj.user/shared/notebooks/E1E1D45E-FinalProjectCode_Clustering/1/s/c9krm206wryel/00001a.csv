@@ -1,0 +1,503 @@
+"0","    "
+"0","    main.cluster.df <- aggregate(main.cluster.df, by = list(main.cluster.df$State), FUN = mean)"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"2","Warning in mean.default(X[[i]], ...) :"
+"2","
+ "
+"2"," argument is not numeric or logical: returning NA
+"
+"0","    main.cluster.df"

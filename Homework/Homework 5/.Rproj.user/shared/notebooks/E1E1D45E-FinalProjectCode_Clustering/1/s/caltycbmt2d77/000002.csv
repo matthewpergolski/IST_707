@@ -1,0 +1,7 @@
+"0","    # Load Data Set"
+"0","    raw.data.cluster <- read.csv('/Users/pergolicious/Downloads/Balanced_FoodDesertComparisonData_2006_2019.csv',"
+"0","                                  stringsAsFactors = TRUE)"
+"0",""
+"0","    #/Users/pergolicious/Downloads/FoodAccessResearchAtlasData2019.csv"
+"0","    #/Users/pergolicious/OneDrive - Syracuse University/Syracuse University/Courses/IST 707/Final Project/Balanced_FoodDesertComparisonData_2006_2019.csv"
+"0","    #/Users/pergolicious/Downloads/Balanced_FoodDesertComparisonData_2006_2019.csv"

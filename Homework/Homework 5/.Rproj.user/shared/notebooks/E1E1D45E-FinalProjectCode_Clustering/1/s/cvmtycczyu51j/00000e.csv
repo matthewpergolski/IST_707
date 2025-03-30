@@ -1,0 +1,3 @@
+"0","    "
+"0","        #fviz_nbclust(num.data.cluster, kmeans, method = ""wss"")"
+"0",""
